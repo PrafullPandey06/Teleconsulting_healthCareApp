@@ -6,6 +6,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 @Entity(name="doctor_patient")
 @NoArgsConstructor
@@ -13,4 +15,11 @@ import javax.persistence.Entity;
 @Getter
 @Setter
 public class Doctor_Patient extends BaseModel{
+    @ManyToOne
+    @JoinColumn(name="doctor_id")
+    private Doctor doctor;
+
+    @ManyToOne
+    @JoinColumn(name="patient_id")
+    private Patient patient;
 }

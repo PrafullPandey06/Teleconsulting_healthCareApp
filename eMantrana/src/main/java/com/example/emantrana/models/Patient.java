@@ -46,4 +46,7 @@ public class Patient extends BaseModel{
 
     @OneToOne(mappedBy = "patient")
     private General_Queue general_queue;
+
+    @OneToMany(mappedBy = "patient")
+    private List<Doctor_Patient> doctor_patient;
 }
